@@ -47,7 +47,18 @@ def nombres(fname): # exercice 5, en liste de compréhension
         
     liste_nombres = sorted([int(mot) for mot in donnees.split() if mot.isdigit()])
     print(liste_nombres)
-        
+
+    
+#Écrire une fonction qui trouve le mot le plus long dans un fichier texte 
+import os
+filename = 'c03_ch8_exercices-benjamindeleener/exemple.txt'
+#print(os.chdir(filename))) véréfier chemin
+with open(filename, mode='r') as file:
+    mots = file.read().split()
+    #print(mots) pour vérifier
+    mots.sort(key=lambda x: len(x), reverse = True)
+    print(mots[0])
+     
 
 if __name__ == '__main__':
     # TODO: Appelez vos fonctions ici
